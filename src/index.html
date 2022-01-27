@@ -1,11 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ThreeJS Starter</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ThreeJS Starter</title>
 </head>
 <body>
-    <canvas class="webgl"></canvas>
+  <div class="title">
+    <h1>Welcome to the 3D World!</h1>
+  </div>
+  <div class="flex-container">
+    <div class="flex-canvas">
+        <canvas class="webgl"></canvas>
+    </div>
+    <div class="flex-menu">
+      <div class="text-center">
+        
+        <h4>Click on an image to see the 3d render:</h4>
+        <img src="/static/image1.jpeg" class="image-menu" data-target="image1.jpeg" alt="" height="120">
+        <img src="/static/image2.jpeg" class="image-menu" data-target="image2.jpeg" alt=""height="120">
+        <img src="/static/image3.jpeg" class="image-menu" data-target="image3.jpeg" alt=""height="120">
+        <p>This page was created to show what we can do with a 3d render. you can rotate and zoom around the object. We can also change the background, add new objects etc...</p>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

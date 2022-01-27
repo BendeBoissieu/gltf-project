@@ -5,22 +5,32 @@ import * as dat from 'dat.gui'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 
 // Debug
-//const gui = new dat.GUI()
-console.log("hello world")
+// const gui = new dat.GUI()
+
 // Canvas
 const canvas = document.querySelector('canvas.webgl')
 
 // Scene
 const scene = new THREE.Scene()
-scene.background = new THREE.Color(0x080820);
+//5scene.background = new THREE.Color(0xeaeae8);
 
 // Mug
 var model;
 
-function loadObject() {
+function onDocumentMouseClick(e) {
+    if (e.target.dataset.target) {
+        var imageLink = e.target.dataset.target;
+        loadObject(imageLink)
+    }
+}
+
+document.addEventListener('click', onDocumentMouseClick)
+
+function loadObject(imageLink) {
     const gltfloader = new GLTFLoader()
     var textureLoader = new THREE.TextureLoader();
-    var texture = textureLoader.load('custom_image.png');
+    if (!imageLink) { var imageLink = 'image1.jpeg' }
+    var texture = textureLoader.load(imageLink);
     texture.flipY = false;
     gltfloader.load('mug.gltf',
         function (gltf) {
@@ -29,18 +39,23 @@ function loadObject() {
             //gui.add(model.rotation, 'x').min(0).max(9)
             //gui.add(model.rotation, 'y').min(0).max(9)
             //gui.add(model.rotation, 'z').min(0).max(9)
-            model.position.set(0, 0, 0);
+            model.position.set(0, -0.12, 0);
+            model.rotation.set(0, 2, 0);
             model.traverse((o) => {
                 if (o.isMesh) {
                     // note: for a multi-material mesh, `o.material` may be an array,
                     // in which case you'd need to set `.map` on each value.
-                    o.material.map = texture;
+                    if (o.material.name == "image") {
+                        o.material.map = texture;
+                    } else {
+                        if (texture.image.src.includes("image3.jpeg")) {
+                            o.material.color.set(0x07004a);
+                        }
+                    }
                     o.castShadow = true;
                 }
             });
 
-            model.receiveShadow = true;
-            model.castShadow = true;
             scene.add(model)
 
             animate();
@@ -83,38 +98,30 @@ function loadBackground() {
 loadObject()
 loadBackground()
 
+// Size canvas
 
-
-// Lights
-//const pointLight = new THREE.PointLight(0xffffff, 0.1)
-//pointLight.position.x = 0
-//pointLight.position.y = 9
-//pointLight.position.z = 6.7
-//pointLight.intensity = 1.70
-//scene.add(pointLight)
-//gui.add(pointLight.position, 'x').min(0).max(9)
-//gui.add(pointLight.position, 'y').min(0).max(9)
-//gui.add(pointLight.position, 'z').min(0).max(9)
-//gui.add(pointLight, 'intensity').min(0).max(9).step(0.01)
-
-//const pointlighthelper = new THREE.PointLightHelper(pointLight, 1)
-//scene.add(pointlighthelper)
-
-//const light = new THREE.HemisphereLight( 0xffffff, 0x080820, 1 );
-//scene.add( light );
-
-/**
- * Sizes
- */
-const sizes = {
-    width: window.innerWidth,
-    height: window.innerHeight
+    //width: window.innerWidth,
+    //height: window.innerHeight
+if (window.innerWidth < 500) {
+    var sizes = {
+        width: 300,
+        height: 300
+    }
+} else {
+    var sizes = {
+        width: 500,
+        height: 500
+    }
 }
+
 
 window.addEventListener('resize', () => {
     // Update sizes
-    sizes.width = window.innerWidth
-    sizes.height = window.innerHeight
+    if (window.innerWidth < 500) {
+        sizes.width = 300
+        sizes.height = 300
+    }
+    //sizes.height = window.innerHeight
 
     // Update camera
     camera.aspect = sizes.width / sizes.height
@@ -125,19 +132,35 @@ window.addEventListener('resize', () => {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 })
 
-/**
- * Camera
- */
-// Base camera
+
+// camera
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
-camera.position.x = 0
-camera.position.y = 0
-camera.position.z = 2
+camera.position.x = 0.4
+camera.position.y = 1.2
+camera.position.z = 1.2
 scene.add(camera)
+
+// Lights
+const directionallight = new THREE.DirectionalLight(0xffffff, 1);
+directionallight.position.x = 20
+directionallight.position.y = 20
+directionallight.position.z = 20
+directionallight.castShadow = true;
+//gui.add(directionallight.position, 'x').min(0).max(9)
+//gui.add(directionallight.position, 'y').min(0).max(9)
+//gui.add(directionallight.position, 'z').min(0).max(9)
+//gui.add(directionallight, 'intensity').min(0).max(9).step(0.01)
+scene.add(directionallight);
+//scene.add(new THREE.CameraHelper(directionallight.shadow.camera));
+//const directionallighthelper = new THREE.DirectionalLightHelper(directionallight, 1)
+//scene.add(directionallighthelper)
+const light2 = new THREE.HemisphereLight(0xffffff, 0x080820, 0.5);
+scene.add(light2);
+
 
 // Controls
 // const controls = new OrbitControls(camera, canvas)
-// controls.enableDamping = true
+6// controls.enableDamping = true
 
 /**
  * Renderer
@@ -159,7 +182,7 @@ controls.target.set(0, 0.5, 0);
 controls.minPolarAngle = 0
 controls.maxPolarAngle = 1.71
 controls.minDistance = 1.2;
-controls.maxDistance = 4;
+controls.maxDistance = 3.9;
 controls.update();
 controls.enablePan = false;
 controls.enableDamping = true;
@@ -176,17 +199,3 @@ const animate = () => {
     // Call tick again on the next frame
     window.requestAnimationFrame(animate)
 }
-
-
-const directionallight = new THREE.DirectionalLight(0xffffff, 1);
-directionallight.position.x += 20
-directionallight.position.y += 20
-directionallight.position.z += 20
-directionallight.castShadow = true;
-scene.add(directionallight);
-//scene.add(new THREE.CameraHelper(directionallight.shadow.camera));
-//const directionallighthelper = new THREE.DirectionalLightHelper(directionallight, 1)
-//scene.add(directionallighthelper)
-
-const light2 = new THREE.HemisphereLight(0xffffff, 0x080820, 0.5);
-scene.add(light2);

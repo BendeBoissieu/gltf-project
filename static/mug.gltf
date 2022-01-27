@@ -15,86 +15,44 @@
     "nodes" : [
         {
             "mesh" : 0,
-            "name" : "Mug",
-            "rotation" : [
-                0,
-                0.9164040684700012,
-                0,
-                0.4002544581890106
-            ],
+            "name" : "Circle",
             "scale" : [
-                1.0,
-                1.0,
-                1.0
-            ],
-            "translation" : [
-                0.0,
-                -0.107,
-		0.0
-            ]
-        }
-    ],
-    "animations" : [
-        {
-            "channels" : [
-                {
-                    "sampler" : 0,
-                    "target" : {
-                        "node" : 0,
-                        "path" : "translation"
-                    }
-                },
-                {
-                    "sampler" : 1,
-                    "target" : {
-                        "node" : 0,
-                        "path" : "rotation"
-                    }
-                },
-                {
-                    "sampler" : 2,
-                    "target" : {
-                        "node" : 0,
-                        "path" : "scale"
-                    }
-                }
-            ],
-            "name" : "MugAction.001",
-            "samplers" : [
-                {
-                    "input" : 4,
-                    "interpolation" : "LINEAR",
-                    "output" : 5
-                },
-                {
-                    "input" : 4,
-                    "interpolation" : "LINEAR",
-                    "output" : 6
-                },
-                {
-                    "input" : 7,
-                    "interpolation" : "STEP",
-                    "output" : 8
-                }
+                0.9651162624359131,
+                1.0515464544296265,
+                0.9651162624359131
             ]
         }
     ],
     "materials" : [
         {
             "doubleSided" : true,
-            "name" : "Material.005",
+            "name" : "Material",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.9403979182243347,
+                    0.9403979182243347,
+                    0.9403979182243347,
+                    1
+                ],
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.5
+            }
+        },
+        {
+            "doubleSided" : true,
+            "name" : "image",
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
                     "index" : 0
                 },
-                "metallicFactor" : 0.14987079799175262,
-                "roughnessFactor" : 0.2571059465408325
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.5
             }
         }
     ],
     "meshes" : [
         {
-            "name" : "Circle.001",
+            "name" : "Circle",
             "primitives" : [
                 {
                     "attributes" : {
@@ -104,6 +62,15 @@
                     },
                     "indices" : 3,
                     "material" : 0
+                },
+                {
+                    "attributes" : {
+                        "POSITION" : 4,
+                        "NORMAL" : 5,
+                        "TEXCOORD_0" : 6
+                    },
+                    "indices" : 7,
+                    "material" : 1
                 }
             ]
         }
@@ -116,16 +83,16 @@
     ],
     "images" : [
         {
-            "mimeType" : "image/png",
-            "name" : "custom_image",
-            "uri" : "custom_image.png"
+            "mimeType" : "image/jpeg",
+            "name" : "image",
+            "uri" : "image1.jpeg"
         }
     ],
     "accessors" : [
         {
             "bufferView" : 0,
             "componentType" : 5126,
-            "count" : 2007,
+            "count" : 2167,
             "max" : [
                 0.8600000739097595,
                 0.9699999094009399,
@@ -141,109 +108,96 @@
         {
             "bufferView" : 1,
             "componentType" : 5126,
-            "count" : 2007,
+            "count" : 2167,
             "type" : "VEC3"
         },
         {
             "bufferView" : 2,
             "componentType" : 5126,
-            "count" : 2007,
+            "count" : 2167,
             "type" : "VEC2"
         },
         {
             "bufferView" : 3,
             "componentType" : 5123,
-            "count" : 11136,
+            "count" : 10560,
             "type" : "SCALAR"
         },
         {
             "bufferView" : 4,
             "componentType" : 5126,
-            "count" : 180,
+            "count" : 117,
             "max" : [
-                6
+                -0.27351364493370056,
+                0.8877503871917725,
+                0.33179858326911926
             ],
             "min" : [
-                0.03333333333333333
+                -0.4280203580856323,
+                0.10899648070335388,
+                -0.27351364493370056
             ],
-            "type" : "SCALAR"
+            "type" : "VEC3"
         },
         {
             "bufferView" : 5,
             "componentType" : 5126,
-            "count" : 180,
+            "count" : 117,
             "type" : "VEC3"
         },
         {
             "bufferView" : 6,
             "componentType" : 5126,
-            "count" : 180,
-            "type" : "VEC4"
+            "count" : 117,
+            "type" : "VEC2"
         },
         {
             "bufferView" : 7,
-            "componentType" : 5126,
-            "count" : 1,
-            "max" : [
-                3.8666666666666667
-            ],
-            "min" : [
-                3.8666666666666667
-            ],
+            "componentType" : 5123,
+            "count" : 576,
             "type" : "SCALAR"
-        },
-        {
-            "bufferView" : 8,
-            "componentType" : 5126,
-            "count" : 1,
-            "type" : "VEC3"
         }
     ],
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 24084,
+            "byteLength" : 26004,
             "byteOffset" : 0
         },
         {
             "buffer" : 0,
-            "byteLength" : 24084,
-            "byteOffset" : 24084
+            "byteLength" : 26004,
+            "byteOffset" : 26004
         },
         {
             "buffer" : 0,
-            "byteLength" : 16056,
-            "byteOffset" : 48168
+            "byteLength" : 17336,
+            "byteOffset" : 52008
         },
         {
             "buffer" : 0,
-            "byteLength" : 22272,
-            "byteOffset" : 64224
+            "byteLength" : 21120,
+            "byteOffset" : 69344
         },
         {
             "buffer" : 0,
-            "byteLength" : 720,
-            "byteOffset" : 86496
+            "byteLength" : 1404,
+            "byteOffset" : 90464
         },
         {
             "buffer" : 0,
-            "byteLength" : 2160,
-            "byteOffset" : 87216
+            "byteLength" : 1404,
+            "byteOffset" : 91868
         },
         {
             "buffer" : 0,
-            "byteLength" : 2880,
-            "byteOffset" : 89376
+            "byteLength" : 936,
+            "byteOffset" : 93272
         },
         {
             "buffer" : 0,
-            "byteLength" : 4,
-            "byteOffset" : 92256
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 12,
-            "byteOffset" : 92260
+            "byteLength" : 1152,
+            "byteOffset" : 94208
         }
     ],
     "samplers" : [
@@ -254,7 +208,7 @@
     ],
     "buffers" : [
         {
-            "byteLength" : 92272,
+            "byteLength" : 95360,
             "uri" : "mug.bin"
         }
     ]

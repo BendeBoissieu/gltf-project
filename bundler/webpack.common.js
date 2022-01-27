@@ -54,21 +54,6 @@ module.exports = {
                 ]
             },
 
-            // Images
-            {
-                test: /\.(jpg|png|gif|svg)$/,
-                use:
-                [
-                    {
-                        loader: 'file-loader',
-                        options:
-                        {
-                            outputPath: 'assets/images/'
-                        }
-                    }
-                ]
-            },
-
             // Fonts
             {
                 test: /\.(ttf|eot|woff|woff2)$/,
@@ -82,6 +67,22 @@ module.exports = {
                         }
                     }
                 ]
+            },
+            // Images
+            {
+                test: /\.(png|jpg|gif)$/,
+                use: 
+                [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 100000,
+                            fallback: 'file-loader',
+                            name: '[name].[ext]'
+                        }
+                    }                    
+                ]    
+
             }
         ]
     }
