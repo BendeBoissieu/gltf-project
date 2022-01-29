@@ -20,7 +20,10 @@ var model;
 function onDocumentMouseClick(e) {
     if (e.target.dataset.target) {
         var imageLink = e.target.dataset.target;
-        loadObject(imageLink)
+        if (e.target.classList.contains("mug")) {
+            loadObject(imageLink)
+        }
+        
     }
 }
 

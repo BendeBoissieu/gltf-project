@@ -25,6 +25,12 @@ body
   cursor: grab;
 }
 
+.webgl_tshirt{
+  position: relative;
+  outline: none;
+  cursor: grab;
+}
+
 .title{
   padding-top: 3rem;
   text-align: center;

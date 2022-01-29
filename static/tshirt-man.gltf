@@ -15,23 +15,24 @@
     "nodes" : [
         {
             "mesh" : 0,
-            "name" : "Circle",
-            "scale" : [
-                0.9651162624359131,
-                1.0515464544296265,
-                0.9651162624359131
+            "name" : "tshirt",
+            "rotation" : [
+                0.7071068286895752,
+                0,
+                0,
+                0.7071067094802856
             ]
         }
     ],
     "materials" : [
         {
             "doubleSided" : true,
-            "name" : "Material",
+            "name" : "material",
             "pbrMetallicRoughness" : {
                 "baseColorFactor" : [
-                    0.9403979182243347,
-                    0.9403979182243347,
-                    0.9403979182243347,
+                    0.3373088836669922,
+                    0.19262178242206573,
+                    0.8000000715255737,
                     1
                 ],
                 "metallicFactor" : 0,
@@ -52,7 +53,7 @@
     ],
     "meshes" : [
         {
-            "name" : "Circle",
+            "name" : "tshirt",
             "primitives" : [
                 {
                     "attributes" : {
@@ -84,120 +85,120 @@
     "images" : [
         {
             "mimeType" : "image/jpeg",
-            "name" : "image1",
-            "uri" : "image1.jpeg"
+            "name" : "image_tshirt_1",
+            "uri" : "image_tshirt_1.jpg"
         }
     ],
     "accessors" : [
         {
             "bufferView" : 0,
             "componentType" : 5126,
-            "count" : 2167,
+            "count" : 24724,
             "max" : [
-                0.8600000739097595,
-                0.9699999094009399,
-                0.4280203580856323
+                27.597469329833984,
+                13.935164451599121,
+                5.756649017333984
             ],
             "min" : [
-                -0.4280203580856323,
-                0,
-                -0.4280203580856323
+                -27.675758361816406,
+                -13.047693252563477,
+                -55.5881462097168
             ],
             "type" : "VEC3"
         },
         {
             "bufferView" : 1,
             "componentType" : 5126,
-            "count" : 2167,
+            "count" : 24724,
             "type" : "VEC3"
         },
         {
             "bufferView" : 2,
             "componentType" : 5126,
-            "count" : 2167,
+            "count" : 24724,
             "type" : "VEC2"
         },
         {
             "bufferView" : 3,
             "componentType" : 5123,
-            "count" : 10560,
+            "count" : 37080,
             "type" : "SCALAR"
         },
         {
             "bufferView" : 4,
             "componentType" : 5126,
-            "count" : 117,
+            "count" : 1088,
             "max" : [
-                -0.27351364493370056,
-                0.8877503871917725,
-                0.33179858326911926
+                10.437909126281738,
+                13.868282318115234,
+                -15.703805923461914
             ],
             "min" : [
-                -0.4280203580856323,
-                0.10899648070335388,
-                -0.27351364493370056
+                -10.441452980041504,
+                7.974791049957275,
+                -44.76387023925781
             ],
             "type" : "VEC3"
         },
         {
             "bufferView" : 5,
             "componentType" : 5126,
-            "count" : 117,
+            "count" : 1088,
             "type" : "VEC3"
         },
         {
             "bufferView" : 6,
             "componentType" : 5126,
-            "count" : 117,
+            "count" : 1088,
             "type" : "VEC2"
         },
         {
             "bufferView" : 7,
             "componentType" : 5123,
-            "count" : 576,
+            "count" : 1632,
             "type" : "SCALAR"
         }
     ],
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 26004,
+            "byteLength" : 296688,
             "byteOffset" : 0
         },
         {
             "buffer" : 0,
-            "byteLength" : 26004,
-            "byteOffset" : 26004
+            "byteLength" : 296688,
+            "byteOffset" : 296688
         },
         {
             "buffer" : 0,
-            "byteLength" : 17336,
-            "byteOffset" : 52008
+            "byteLength" : 197792,
+            "byteOffset" : 593376
         },
         {
             "buffer" : 0,
-            "byteLength" : 21120,
-            "byteOffset" : 69344
+            "byteLength" : 74160,
+            "byteOffset" : 791168
         },
         {
             "buffer" : 0,
-            "byteLength" : 1404,
-            "byteOffset" : 90464
+            "byteLength" : 13056,
+            "byteOffset" : 865328
         },
         {
             "buffer" : 0,
-            "byteLength" : 1404,
-            "byteOffset" : 91868
+            "byteLength" : 13056,
+            "byteOffset" : 878384
         },
         {
             "buffer" : 0,
-            "byteLength" : 936,
-            "byteOffset" : 93272
+            "byteLength" : 8704,
+            "byteOffset" : 891440
         },
         {
             "buffer" : 0,
-            "byteLength" : 1152,
-            "byteOffset" : 94208
+            "byteLength" : 3264,
+            "byteOffset" : 900144
         }
     ],
     "samplers" : [
@@ -208,8 +209,8 @@
     ],
     "buffers" : [
         {
-            "byteLength" : 95360,
-            "uri" : "mug.bin"
+            "byteLength" : 903408,
+            "uri" : "tshirt-man.bin"
         }
     ]
 }
