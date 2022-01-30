@@ -16,27 +16,50 @@ const scene = new THREE.Scene()
 // Tshirt
 var model;
 
+// Default model woman
+if (!modelToLoad){
+    var modelToLoad = "tshirt-woman.gltf";
+    }
+if (!imageLinkTshirt) {
+    var imageLinkTshirt = "image_tshirt_1.jpg";
+}
+
 function onDocumentMouseClick(e) {
     if (e.target.dataset.target) {
-        var imageLink = e.target.dataset.target;
         if (e.target.classList.contains("tshirt")) {
-          loadObject(imageLink)
-      }
+        imageLinkTshirt = e.target.dataset.target;
+          scene.remove(scene.children[3])
+          loadObject()
+        }
+    }
+    if (e.target.id == "#button_tshirt_man") {
+      document.getElementById("#button_tshirt_man").classList.add("active");
+      document.getElementById("#button_tshirt_woman").classList.remove("active");
+      modelToLoad = 'tshirt-man.gltf';
+      scene.remove(scene.children[3])
+      loadObject()
+    }
+    if (e.target.id == "#button_tshirt_woman") {
+      document.getElementById("#button_tshirt_woman").classList.add("active");
+      document.getElementById("#button_tshirt_man").classList.remove("active");
+      modelToLoad = 'tshirt-woman.gltf';
+      scene.remove(scene.children[3])
+      loadObject()
     }
 }
 
 document.addEventListener('click', onDocumentMouseClick)
 
-function loadObject(imageLink) {
+function loadObject() {  
     const gltfloader = new GLTFLoader()
     var textureLoader = new THREE.TextureLoader();
-    if (!imageLink) { var imageLink = 'image_tshirt_1.jpg' }
-    var texture = textureLoader.load(imageLink);
+    console.log("imglink")
+    console.log(imageLinkTshirt);
+    var texture = textureLoader.load(imageLinkTshirt);
     texture.flipY = false;
-    gltfloader.load('tshirt-man.gltf',
+    gltfloader.load(modelToLoad,
         function (gltf) {
             model = gltf.scene
-
             //gui.add(model.rotation, 'x').min(0).max(9)
             //gui.add(model.rotation, 'y').min(0).max(9)
             //gui.add(model.rotation, 'z').min(0).max(9)
@@ -80,8 +103,8 @@ loadObject()
     //height: window.innerHeight
 if (window.innerWidth < 500) {
     var sizes = {
-        width: 300,
-        height: 300
+        width: 270,
+        height: 270
     }
 } else {
     var sizes = {
@@ -159,10 +182,10 @@ const clock = new THREE.Clock()
 
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.target.set(0,0, 0);
-controls.minPolarAngle = 0
-controls.maxPolarAngle = 1.71
-controls.minDistance = 30;
-controls.maxDistance = 50;
+controls.minPolarAngle = (Math.PI) / 6;
+controls.maxPolarAngle = 3*(Math.PI) / 4;
+controls.minDistance = 40;
+controls.maxDistance = 80;
 controls.update();
 controls.enablePan = false;
 controls.enableDamping = true;

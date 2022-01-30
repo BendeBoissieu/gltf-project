@@ -17,11 +17,13 @@ const scene = new THREE.Scene()
 // Mug
 var model;
 
+if (!imageLinkMug) { var imageLinkMug = 'image_mug_1.jpeg' }
+
 function onDocumentMouseClick(e) {
     if (e.target.dataset.target) {
-        var imageLink = e.target.dataset.target;
         if (e.target.classList.contains("mug")) {
-            loadObject(imageLink)
+            imageLinkMug = e.target.dataset.target;
+            loadObject()
         }
         
     }
@@ -29,11 +31,10 @@ function onDocumentMouseClick(e) {
 
 document.addEventListener('click', onDocumentMouseClick)
 
-function loadObject(imageLink) {
+function loadObject() {
     const gltfloader = new GLTFLoader()
     var textureLoader = new THREE.TextureLoader();
-    if (!imageLink) { var imageLink = 'image1.jpeg' }
-    var texture = textureLoader.load(imageLink);
+    var texture = textureLoader.load(imageLinkMug);
     texture.flipY = false;
     gltfloader.load('mug.gltf',
         function (gltf) {
@@ -51,7 +52,7 @@ function loadObject(imageLink) {
                     if (o.material.name == "image") {
                         o.material.map = texture;
                     } else {
-                        if (texture.image.src.includes("image3.jpeg")) {
+                        if (texture.image.src.includes("image_mug_3.jpeg")) {
                             o.material.color.set(0x07004a);
                         }
                     }
@@ -107,8 +108,8 @@ loadBackground()
     //height: window.innerHeight
 if (window.innerWidth < 500) {
     var sizes = {
-        width: 300,
-        height: 300
+        width: 270,
+        height: 270
     }
 } else {
     var sizes = {

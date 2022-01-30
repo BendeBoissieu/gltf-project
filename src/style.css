@@ -64,13 +64,6 @@ p{
 }
 
   
-.flex-menu {
-  padding: 1rem;
-  flex: 50%;
-  background-color: rgb(225, 226, 225);
-  height: auto;
-}
-  
 @media (max-width: 800px) {
   .flex-container {
       flex-direction: column;
@@ -86,4 +79,24 @@ p{
 .image-menu{
   margin: 1rem;
   cursor: pointer;
+}
+
+.button {
+  outline:none;
+  text-align: center;
+  width: 6rem;
+  border-radius:1rem;
+  padding: 0.5rem 0;
+  text-shadow:0;
+  font-size: 1rem;
+  text-decoration: none;
+  color: #000000;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: inline-block;
+  border: 1px solid #000000;
+}
+.active{
+  color: #fff;
+  background: #000000;
 }

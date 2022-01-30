@@ -15,23 +15,29 @@
     "nodes" : [
         {
             "mesh" : 0,
-            "name" : "Circle",
-            "scale" : [
-                0.9651162624359131,
-                1.0515464544296265,
-                0.9651162624359131
+            "name" : "tshirt-woman",
+            "rotation" : [
+                0.7071068286895752,
+                0,
+                0,
+                0.7071067094802856
+            ],
+            "translation" : [
+                59.6818962097168,
+                0,
+                0
             ]
         }
     ],
     "materials" : [
         {
             "doubleSided" : true,
-            "name" : "Material",
+            "name" : "material",
             "pbrMetallicRoughness" : {
                 "baseColorFactor" : [
-                    0.9403979182243347,
-                    0.9403979182243347,
-                    0.9403979182243347,
+                    0.2098236083984375,
+                    0.8000000715255737,
+                    0.39258939027786255,
                     1
                 ],
                 "metallicFactor" : 0,
@@ -52,7 +58,7 @@
     ],
     "meshes" : [
         {
-            "name" : "Circle",
+            "name" : "uploads_files_605564_t+shirts",
             "primitives" : [
                 {
                     "attributes" : {
@@ -84,120 +90,120 @@
     "images" : [
         {
             "mimeType" : "image/jpeg",
-            "name" : "image_mug_1",
-            "uri" : "image_mug_1.jpeg"
+            "name" : "image_tshirt_1",
+            "uri" : "image_tshirt_1.jpg"
         }
     ],
     "accessors" : [
         {
             "bufferView" : 0,
             "componentType" : 5126,
-            "count" : 2167,
+            "count" : 5002,
             "max" : [
-                0.8600000739097595,
-                0.9699999094009399,
-                0.4280203580856323
+                -38.956722259521484,
+                11.650382995605469,
+                3.1165831089019775
             ],
             "min" : [
-                -0.4280203580856323,
-                0,
-                -0.4280203580856323
+                -82.41108703613281,
+                -11.604418754577637,
+                -49.39869689941406
             ],
             "type" : "VEC3"
         },
         {
             "bufferView" : 1,
             "componentType" : 5126,
-            "count" : 2167,
+            "count" : 5002,
             "type" : "VEC3"
         },
         {
             "bufferView" : 2,
             "componentType" : 5126,
-            "count" : 2167,
+            "count" : 5002,
             "type" : "VEC2"
         },
         {
             "bufferView" : 3,
             "componentType" : 5123,
-            "count" : 10560,
+            "count" : 24318,
             "type" : "SCALAR"
         },
         {
             "bufferView" : 4,
             "componentType" : 5126,
-            "count" : 117,
+            "count" : 153,
             "max" : [
-                -0.27351364493370056,
-                0.8877503871917725,
-                0.33179858326911926
+                -49.821414947509766,
+                13.316280364990234,
+                -11.336371421813965
             ],
             "min" : [
-                -0.4280203580856323,
-                0.10899648070335388,
-                -0.27351364493370056
+                -72.20756530761719,
+                7.228551864624023,
+                -37.37937927246094
             ],
             "type" : "VEC3"
         },
         {
             "bufferView" : 5,
             "componentType" : 5126,
-            "count" : 117,
+            "count" : 153,
             "type" : "VEC3"
         },
         {
             "bufferView" : 6,
             "componentType" : 5126,
-            "count" : 117,
+            "count" : 153,
             "type" : "VEC2"
         },
         {
             "bufferView" : 7,
             "componentType" : 5123,
-            "count" : 576,
+            "count" : 768,
             "type" : "SCALAR"
         }
     ],
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 26004,
+            "byteLength" : 60024,
             "byteOffset" : 0
         },
         {
             "buffer" : 0,
-            "byteLength" : 26004,
-            "byteOffset" : 26004
+            "byteLength" : 60024,
+            "byteOffset" : 60024
         },
         {
             "buffer" : 0,
-            "byteLength" : 17336,
-            "byteOffset" : 52008
+            "byteLength" : 40016,
+            "byteOffset" : 120048
         },
         {
             "buffer" : 0,
-            "byteLength" : 21120,
-            "byteOffset" : 69344
+            "byteLength" : 48636,
+            "byteOffset" : 160064
         },
         {
             "buffer" : 0,
-            "byteLength" : 1404,
-            "byteOffset" : 90464
+            "byteLength" : 1836,
+            "byteOffset" : 208700
         },
         {
             "buffer" : 0,
-            "byteLength" : 1404,
-            "byteOffset" : 91868
+            "byteLength" : 1836,
+            "byteOffset" : 210536
         },
         {
             "buffer" : 0,
-            "byteLength" : 936,
-            "byteOffset" : 93272
+            "byteLength" : 1224,
+            "byteOffset" : 212372
         },
         {
             "buffer" : 0,
-            "byteLength" : 1152,
-            "byteOffset" : 94208
+            "byteLength" : 1536,
+            "byteOffset" : 213596
         }
     ],
     "samplers" : [
@@ -208,8 +214,8 @@
     ],
     "buffers" : [
         {
-            "byteLength" : 95360,
-            "uri" : "mug.bin"
+            "byteLength" : 215132,
+            "uri" : "tshirt-woman.bin"
         }
     ]
 }
